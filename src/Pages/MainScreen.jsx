@@ -15,11 +15,11 @@ function MainScreen() {
 
       {/* <div className={`grid grid-cols-[2fr,4fr,2fr] gap-4 w-full`}> */}
 
-      <div className={`${showContactInfo ? 'grid  grid-cols-[2fr,4fr,2fr]' :' grid  grid-cols-[4fr,6fr]' } grid  grid-cols-[3fr,6fr] gap-4 w-full`}>
+      <div className={`${showContactInfo ? 'grid  grid-cols-[2fr,3fr,2fr] bg-yellow-100' :' grid  grid-cols-[2fr,5fr]' } gap-4 w-full`}>
 
         {/* Contacts list Section */}
         {/* <div className={`${showContactInfo ? 'hidden md:block' : 'block'}  h-full overflow-y-auto`}> */}
-        <div className= 'h-full overflow-y-auto scrollbar-hide'>
+        <div className= 'h-full overflow-y-auto scrollbar-hide  bg-red-100'>
           <SingleContact />
           <SingleContact />
           <SingleContact />
@@ -39,8 +39,11 @@ function MainScreen() {
         </div>
 
         {/* Chat Section */}
-        <div id="chatSection" className={`${showContactInfo ? 'grid grid-cols-[6fr,3fr]' : 'grid grid-cols-1'} bg-gray-100 p-4 w-full h-full `}>
-          <div className='h-full overflow-y-auto'>
+
+        {/* <div id="chatSection" className={`${showContactInfo ? 'grid grid-cols-[6fr,3fr]' : 'grid grid-cols-1'} bg-gray-100 p-4 w-full h-full `}> */}
+          
+
+          <div className='h-full overflow-y-auto bg-yellow-100'>
             <div className="">
               <div className="flex items-center">
                 <img
@@ -89,7 +92,7 @@ function MainScreen() {
           <div className='h-full overflow-y-auto'>
             {showContactInfo && (
 
-              <div id="contactInfoSection" className="grid w-full bg-white p-4">
+              <div id="contactInfoSection" className="grid w-full h-full bg-white p-4">
                 <div className="flex items-center justify-between border-b pb-2 mb-4">
                   <div className="flex items-center">
                     <img src="profile-image.png" alt="Profile" className="w-10 h-10 rounded-full" />
@@ -109,7 +112,6 @@ function MainScreen() {
           </div>
 
 
-        </div>
 
       </div>
     </div>
