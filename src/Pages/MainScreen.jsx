@@ -15,7 +15,7 @@ function MainScreen() {
 
       {/* <div className={`grid grid-cols-[2fr,4fr,2fr] gap-4 w-full`}> */}
 
-      <div className={`grid  grid-cols-[3fr,7fr] gap-4 w-full`}>
+      <div className={`grid  grid-cols-[3fr,6fr] gap-4 w-full`}>
 
         {/* Contacts Section */}
         {/* <div id="chatSection" className={`${showContactInfo ? 'grid grid-cols-[2fr,4fr,2fr]' : 'grid grid-cols-1'} bg-gray-100 p-4 w-full h-full`}> */}

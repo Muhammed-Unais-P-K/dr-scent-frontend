@@ -5,7 +5,7 @@ const SingleContact = () => {
     <>
     
     <div className=" flex border-b border-slate-200 mt-2 "></div>
-           <div className="flex  justify-between py-1  space-x-12" >
+           <div className="flex  justify-between py-1  space-x-8" >
              <div className="flex space-x-2 items-center">
                <img width="40" height="40"
                  className="rounded-full" src="/images/profile/contact-icon.png" alt="Profile"
