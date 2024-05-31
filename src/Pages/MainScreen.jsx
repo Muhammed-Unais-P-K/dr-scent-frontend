@@ -26,7 +26,7 @@ function MainScreen() {
         {/* Heading (Conversation) and  logout logo*/}
         <div className='bg-[#f3f3f3]'>
 
-          <div className="flex flex-col  md:h-[84px] top-0 ">
+          <div className="flex flex-col md:h-[84px] top-0 ">
 
             <div className='md:w-[342px] md:h-[40px] mt-2 px-5 py-2.5'>
               <div className='flex flex-row space-x-2.5'>
@@ -40,47 +40,25 @@ function MainScreen() {
             </div>
 
             {/* for search bar */}
-            <div className="md:w-[342px] md:h-[54px]  px-5 py-2.5">
+           
+            <div className=" flex justify-center md:w-full md:h-[54px] space-y-2.5 px-5 py-3">
               <div className="flex md:w-[299px] md:h-[34px]  items-center bg-white rounded-md border border-gray-300">
-                {/* <svg className="ml-2"
-                xmlns="http://www.w3.org/2000/svg"
-                width="22" height="22" viewBox="0 0 24 24"
-              >
-                <path d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"></path>
-              </svg> */}
-                <img src="/images/search-normal.png" className='w-3.5 h-3.5' alt="" />
-                <input type="text" placeholder="Search"
-                  className="leading-3 bg-transparent outline-none text-gray-700 placeholder-gray-500 h-[9px] w-full"
-                />
+               <div className="flex flex-row items-center space-x-3 ml-1.5">
+               <div>
+                    <img src="/images/search-normal.png" className='w-3.5 h-3.5' alt="search" />
+                 </div>
+                <div>
+                  <input type="text" placeholder="Search"
+                    className="md:leading-[9px] text-sm text-[#C0BFBF] bg-transparent outline-none text-gray-700 placeholder-gray-500  w-full"
+                  />
+                </div>
+               </div>
               </div>
             </div>
 
-             <div className="flex items-center w-full max-w-md mx-auto bg-gray-100 rounded-lg">
-      <svg
-        className="w-6 h-6 text-gray-400 ml-3"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
-        ></path>
-      </svg>
-      <input
-        type="text"
-        placeholder="Search"
-        className="w-full py-3 pl-3 pr-4 bg-transparent border-none focus:outline-none rounded-lg"
-      />
-    </div>
+
 
           </div>
-
-
-
 
 
           {/* Search bar */}
@@ -113,18 +91,19 @@ function MainScreen() {
       <div className='grid grid-rows-[auto,1fr,auto] w-full h-screen'>
 
         {/* Top Bar */}
-        <div className='bg-white'>
+        <div className='bg-white px-9 py-3'>
 
           <div className="flex z-10 items-center w-full h-[73px] ">
-            <div className='bg-yellow-100 flex flex-row md:w-[490px] h-12'>
+            <div className=' space-x-3 flex flex-row items-center md:w-[490px] h-12'>
               <div>
                 <IoMdContact className='w-10 h-10 text-white bg-[#927DE7] rounded-lg' onClick={handleProfileClick} />
               </div>
-              <div className="ml-3 ">
-                <div className="text-lg font-semibold">+971 432 342</div>
+              <div className="items-center ml-3 md:w-[427px] h-6 space-y-1 ">
+                <div className=" font-semibold text-lg text-[#333333] font-semibold md:w-[124px] md:h-[22px]">+971 432 342</div>
               </div>
             </div>
           </div>
+
 
           <div className="flex border-b border-slate-200 "></div>
         </div>
@@ -142,18 +121,21 @@ function MainScreen() {
         {/* Message typing bar */}
         <div className="w-full h-[87px] bg-[#EAEAEA] p-4 border-t flex items-center">
           <div className='flex flex-row w-full'>
-            <div className="">
 
-              <CiFaceSmile className='w-8 h-8 bg-white text-opacity-5   border border-gray-300 rounded-lg border-r-0' />
+            <div className='flex items-center w-8 h-8 border border-gray-300 bg-white py-5 ml-1.5 rounded-tl-xl rounded-bl-xl
+            focus:outline-none border-l-0 focus:ring-2 focus:ring-blue-500'>
+              <div className="absolute  ">
+                <CiFaceSmile className='w-4 h-4  ml-3 bg-white text-opacity-5   border-none rounded-lg border-r-0' />
+              </div>
             </div>
+
             <div className='flex-1 '>
 
               <div>
-                {/* <CiFaceSmile className='w-8 h-8'/> */}
 
                 <input
                   type="text" placeholder="Type your message"
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none border-l-0 focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 border border-gray-300  rounded-tr-lg rounded-br-lg focus:outline-none border-l-0 focus:ring-2 focus:ring-blue-500"
                 />
               </div>
             </div>
