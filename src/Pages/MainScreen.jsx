@@ -21,10 +21,10 @@ function MainScreen() {
     <div className={`${showContactInfo ? 'grid   grid-cols-[2fr,3fr,2fr] ' : ' grid  grid-cols-[2fr,5fr]'} h-screen gap-0 w-full`}>
 
 
-      <div className='grid grid-rows-[2fr,8fr] w-full h-screen'>
+      <div className='grid grid-rows-[2fr,8fr] w-full h-screen border border-[#E4E4E4]'>
 
         {/* Heading (Conversation) and  logout logo*/}
-        <div className='bg-[#f3f3f3]'>
+        <div className='bg-[#f3f3f3] border border-[#E4E4E4]'>
 
           <div className="flex flex-col md:h-[84px] top-0 ">
 
@@ -40,19 +40,19 @@ function MainScreen() {
             </div>
 
             {/* for search bar */}
-           
+
             <div className=" flex justify-center md:w-full md:h-[54px] space-y-2.5 px-5 py-3">
               <div className="flex md:w-[299px] md:h-[34px]  items-center bg-white rounded-md border border-gray-300">
-               <div className="flex flex-row items-center space-x-3 ml-1.5">
-               <div>
+                <div className="flex flex-row items-center space-x-3 ml-1.5">
+                  <div>
                     <img src="/images/search-normal.png" className='w-3.5 h-3.5' alt="search" />
-                 </div>
-                <div>
-                  <input type="text" placeholder="Search"
-                    className="md:leading-[9px] text-sm text-[#C0BFBF] bg-transparent outline-none text-gray-700 placeholder-gray-500  w-full"
-                  />
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Search"
+                      className="md:leading-[9px] text-sm text-[#C0BFBF] bg-transparent outline-none text-gray-700 placeholder-gray-500  w-full"
+                    />
+                  </div>
                 </div>
-               </div>
               </div>
             </div>
 
@@ -88,10 +88,10 @@ function MainScreen() {
 
       {/* Chat Section */}
 
-      <div className='grid grid-rows-[auto,1fr,auto] w-full h-screen'>
+      <div className='grid grid-rows-[2fr,auto,2fr] w-full h-screen'>
 
         {/* Top Bar */}
-        <div className='bg-white px-9 py-3'>
+        <div className='bg-white px-9 py-2.5 border border-[#E4E4E4]'>
 
           <div className="flex z-10 items-center w-full h-[73px] ">
             <div className=' space-x-3 flex flex-row items-center md:w-[490px] h-12'>
@@ -105,7 +105,6 @@ function MainScreen() {
           </div>
 
 
-          <div className="flex border-b border-slate-200 "></div>
         </div>
 
 
@@ -123,16 +122,15 @@ function MainScreen() {
           <div className='flex flex-row w-full'>
 
             <div className='flex items-center w-8 h-8 border border-gray-300 bg-white py-5 ml-1.5 rounded-tl-xl rounded-bl-xl
-            focus:outline-none border-l-0 focus:ring-2 focus:ring-blue-500'>
-              <div className="absolute  ">
-                <CiFaceSmile className='w-4 h-4  ml-3 bg-white text-opacity-5   border-none rounded-lg border-r-0' />
+            focus:outline-none border-r-0 focus:ring-2'>
+              <div className="absolute ">
+                <CiFaceSmile className='w-4 h-4  ml-3   cursor-pointer bg-white text-opacity-5   border-none rounded-lg border-r-0' />
               </div>
             </div>
 
             <div className='flex-1 '>
 
               <div>
-
                 <input
                   type="text" placeholder="Type your message"
                   className="w-full p-2 border border-gray-300  rounded-tr-lg rounded-br-lg focus:outline-none border-l-0 focus:ring-2 focus:ring-blue-500"
@@ -140,10 +138,11 @@ function MainScreen() {
               </div>
             </div>
             <div className='ml-2'>
-              <button className="p-2 bg-white rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <button className="p-2 bg-white rounded-lg focus:outline-none  focus:ring-2 focus:ring-blue-500">
                 <img src="/images/send-btn.png" alt="Send" className="w-6 h-6" />
               </button>
             </div>
+
           </div>
         </div>
 
@@ -156,49 +155,47 @@ function MainScreen() {
       {/* <div className='h-full overflow-y-auto scrollbar-hide'> */}
 
       {showContactInfo && (
-        <div className="grid grid-rows-[1fr,4fr,6fr] w-full h-screen">
-          <div className="bg-[#ffffff]">
+        <div className="grid grid-rows-[2fr,4fr,6fr] w-full h-screen">
 
-            <div className="md:space-y-[10px]">
-              <div className="flex justify-center text-center w-32 md:h-[73px] ml-2.5 space-x-2 space-y-3">
+          {/* Contact info header and close icon */}
+          <div className="bg-[#ffffff] border border-[#E4E4E4] ">
+            <div className="md:space-y-[8px] py-2.5">
+              
+              <div className="bg-red-100 flex justify-center text-center w-32 h-10 ml-2.5 space-x-2 space-y-3">
 
                 <div className=" w-6 h-6 cursor-pointer" onClick={handleProfileClick}>
                   <IoMdClose className='mt-4' />
                 </div>
 
-                <div className=" h-6 ">
+                <div className=" h-5 ">
                   <h1 className='text-[#333333] font-semibold text-base'>Contact Info</h1>
                 </div>
               </div>
             </div>
-
-            <div className="flex border-b border-slate-200 "></div>
-
           </div>
 
 
+          {/* Phone number and last seen */}
+          <div className="flex justify-center bg-[#FFFFFF] md:w-full md:h-full  md:h-full border border-[#E4E4E4]">
 
-
-          <div className="flex justify-center bg-[#FFFFFF] md:w-full md:h-full  md:h-full ">
+            <div className='py-5'>
             <div className="flex flex-col md:w-[220px] h-[187px]  justify-center items-center">
-
               <div className="flex justify-center md:h-[105px] md:w-[105px] ">
                 {/* <img src="/images/profile/contact-icon.png" alt="contact" className='w-full' /> */}
                 <IoMdContact className='w-24 h-24 text-white bg-[#927DE7] rounded-lg' />
-
               </div>
-
               <div className="flex flex-col justify-center items-center text-center w-full h-[62px] ">
                 <div className="md:w-[220px]  md:h-[39px] text-2xl text-[#333333] font-semibold ">+971 432 342</div>
                 <div className="md:w-[171px] md:h-[19px] text-[#717171]">Last seen at 04:43 PM</div>
               </div>
-
             </div>
+            </div>
+
           </div>
 
 
-          <div className="flex flex-col bg-[#F3F3F3]  h-full overflow-y-auto scrollbar-hide">
-
+          {/* Details , Mobile and other details */}
+          <div className="flex flex-col bg-[#F3F3F3]  h-full overflow-y-auto scrollbar-hide border border-[#E4E4E4]">
             <div className="flex flex-col md:w-[322px] md:h-[111px] space-y-5  ml-2.5">
 
               <div className="md:w-[60px] h-8  py-2.5">
@@ -214,9 +211,7 @@ function MainScreen() {
                   </div>
                 </div>
               </div>
-
             </div>
-
           </div>
 
 

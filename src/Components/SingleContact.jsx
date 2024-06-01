@@ -9,7 +9,7 @@ const SingleContact = () => {
         <div key={index} className="bg-[#E4E4E4]-100">
           {/* Contact Card */}
           <div className='flex justify-center space-y-1'>
-            <div className='md:w-[319px] md:h-[68px] space-y-2.5 px-2.5 py-3 border border-gray-200 rounded-lg'>
+            <div className='md:w-[319px] md:h-[68px] space-y-2.5 px-2.5 py-3 border  rounded-lg'>
               <div className="flex flex-row md:w-[299px] h-11 space-x-2">
                 <div>
                   <IoMdContact className='w-11 h-11 text-white bg-[#927DE7] rounded-lg' />
