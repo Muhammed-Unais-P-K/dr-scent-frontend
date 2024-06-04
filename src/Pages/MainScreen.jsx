@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import SingleContact from '../Components/SingleContact';
 import Message from '../Components/Message';
 import { messages } from '../messages';
-import { IoIosContact, IoMdClose, IoMdContact } from 'react-icons/io';
+import {  IoMdClose, IoMdContact } from 'react-icons/io';
 import { CiFaceSmile } from 'react-icons/ci';
+import ContactCard from '../Components/ContactCard';
 
 
 
@@ -21,7 +21,7 @@ function MainScreen() {
     <div className={`${showContactInfo ? 'grid   grid-cols-[2fr,3fr,2fr] ' : ' grid  grid-cols-[2fr,5fr]'} h-screen gap-0 w-full`}>
 
 
-      <div className='grid grid-rows-[2fr,8fr] w-full h-screen border border-[#E4E4E4]'>
+      <div className='grid grid-rows-[2fr,8fr] w-full h-screen border border-[#E4E4E4] min-h-20'>
 
         {/* Heading (Conversation) and  logout logo*/}
         <div className='bg-[#f3f3f3] border border-[#E4E4E4]'>
@@ -56,31 +56,12 @@ function MainScreen() {
               </div>
             </div>
 
-
-
           </div>
-
-
-          {/* Search bar */}
-          {/* <div className=" md:w-[342px] md:h-[54px] px-3 bg-[#E0E0E0]">
-            <div className="flex md:w-[299px] md:h-[34px] items-center bg-white rounded-sm">
-              <svg className="ml-2"
-                xmlns="http://www.w3.org/2000/svg"
-                width="22" height="22" viewBox="0 0 24 24"
-              >
-                <path d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"></path>
-              </svg>
-              <input type="text" placeholder="Search"
-                className="ml-4 bg-transparent outline-none text-gray-700 placeholder-gray-500 w-full"
-              />
-            </div>
-          </div> */}
-
 
         </div>
 
         <div className='h-full overflow-y-auto scrollbar-hide bg-[#f3f3f3] '>
-          <SingleContact />
+          <ContactCard />
         </div>
 
       </div>
@@ -91,11 +72,11 @@ function MainScreen() {
       <div className='grid grid-rows-[2fr,auto,2fr] w-full h-screen'>
 
         {/* Top Bar */}
-        <div className='bg-white px-9 py-2.5 border border-[#E4E4E4]'>
+        <div className='bg-white px-9 py-1.5 border border-[#E4E4E4] border-l-0'>
 
-          <div className="flex z-10 items-center w-full h-[73px] ">
-            <div className=' space-x-3 flex flex-row items-center md:w-[490px] h-12'>
-              <div>
+          <div className="flex z-10 items-center w-full h-[72px] ">
+            <div className=' space-x-3 flex flex-row items-center md:w-[490px] h-8'>
+              <div className='cursor-pointer'>
                 <IoMdContact className='w-10 h-10 text-white bg-[#927DE7] rounded-lg' onClick={handleProfileClick} />
               </div>
               <div className="items-center ml-3 md:w-[427px] h-6 space-y-1 ">
@@ -104,10 +85,7 @@ function MainScreen() {
             </div>
           </div>
 
-
         </div>
-
-
 
         {/* Chats / Message bubbles */}
         <div className="h-full bg-[#F9F9F9] p-4 space-y-4 overflow-y-auto scrollbar-hide">
@@ -116,34 +94,37 @@ function MainScreen() {
           ))}
         </div>
 
-
         {/* Message typing bar */}
-        <div className="w-full h-[87px] bg-[#EAEAEA] p-4 border-t flex items-center">
-          <div className='flex flex-row w-full'>
+        <div className="w-full h-[87px]  bg-[#E0E0E0] border border-t-[#E4E4E4] flex items-center py-5  px-5">
 
-            <div className='flex items-center w-8 h-8 border border-gray-300 bg-white py-5 ml-1.5 rounded-tl-xl rounded-bl-xl
+          <div className=" flex items-center h-12 w-full  ">
+            <div className='flex flex-row w-full '>
+
+              <div className='flex items-center w-8 h-8 border border-gray-300 bg-white py-5 ml-1.5 rounded-tl-xl rounded-bl-xl
             focus:outline-none border-r-0 focus:ring-2'>
-              <div className="absolute ">
-                <CiFaceSmile className='w-4 h-4  ml-3   cursor-pointer bg-white text-opacity-5   border-none rounded-lg border-r-0' />
+                <div className="absolute ">
+                  <CiFaceSmile className='w-5 h-5  ml-3 cursor-pointer bg-white text-[#C0BFBF]  border-none rounded-lg border-0' />
+                </div>
               </div>
-            </div>
 
-            <div className='flex-1 '>
+              <div className='flex-1 '>
 
-              <div>
-                <input
-                  type="text" placeholder="Type your message"
-                  className="w-full p-2 border border-gray-300  rounded-tr-lg rounded-br-lg focus:outline-none border-l-0 focus:ring-2 focus:ring-blue-500"
-                />
+                <div>
+                  <input
+                    type="text" placeholder="Type your message"
+                    className="w-full p-2.5 text-sm text-[##E1EDF1] text-opacity-10 border border-gray-300 rounded-tr-lg rounded-br-lg focus:outline-none border-l-0"
+                  />
+                </div>
               </div>
-            </div>
-            <div className='ml-2'>
-              <button className="p-2 bg-white rounded-lg focus:outline-none  focus:ring-2 focus:ring-blue-500">
-                <img src="/images/send-btn.png" alt="Send" className="w-6 h-6" />
-              </button>
-            </div>
+              <div className='ml-2'>
+                <button className="p-2  bg-white rounded-lg focus:outline-none">
+                  <img src="/images/send-btn.png" alt="Send" className="w-6 h-6" />
+                </button>
+              </div>
 
+            </div>
           </div>
+
         </div>
 
       </div>
@@ -155,13 +136,14 @@ function MainScreen() {
       {/* <div className='h-full overflow-y-auto scrollbar-hide'> */}
 
       {showContactInfo && (
-        <div className="grid grid-rows-[2fr,4fr,6fr] w-full h-screen">
+        // <div className="grid grid-rows-[2fr,4fr,6fr] w-full h-screen">
+        <div className="grid grid-rows-[1fr,4fr,8fr] w-full h-screen">
 
           {/* Contact info header and close icon */}
-          <div className="bg-[#ffffff] border border-[#E4E4E4] ">
-            <div className="md:space-y-[8px] py-2.5">
-              
-              <div className="bg-red-100 flex justify-center text-center w-32 h-10 ml-2.5 space-x-2 space-y-3">
+          <div className="bg-[#ffffff] border border-[#E4E4E4] border-b-none ">
+            <div className="md:space-y-[8px] ">
+
+              <div className="flex justify-center text-center md:my-[22px] w-32 h-10 ml-2.5 space-x-2 space-y-3">
 
                 <div className=" w-6 h-6 cursor-pointer" onClick={handleProfileClick}>
                   <IoMdClose className='mt-4' />
@@ -176,26 +158,26 @@ function MainScreen() {
 
 
           {/* Phone number and last seen */}
-          <div className="flex justify-center bg-[#FFFFFF] md:w-full md:h-full  md:h-full border border-[#E4E4E4]">
+          <div className="flex justify-center bg-[#FFFFFF] md:w-full md:h-full  md:h-full border border-[#E4E4E4] border-t-0">
 
             <div className='py-5'>
-            <div className="flex flex-col md:w-[220px] h-[187px]  justify-center items-center">
-              <div className="flex justify-center md:h-[105px] md:w-[105px] ">
-                {/* <img src="/images/profile/contact-icon.png" alt="contact" className='w-full' /> */}
-                <IoMdContact className='w-24 h-24 text-white bg-[#927DE7] rounded-lg' />
+              <div className="flex flex-col md:w-[220px] h-[187px]  justify-center items-center">
+                <div className="flex justify-center md:h-[105px] md:w-[105px] cursor-pointer">
+                  {/* <img src="/images/profile/contact-icon.png" alt="contact" className='w-full' /> */}
+                  <IoMdContact className='w-24 h-24 text-white bg-[#927DE7] rounded-lg' />
+                </div>
+                <div className="flex flex-col justify-center items-center text-center w-full h-[62px] ">
+                  <div className="md:w-[220px]  md:h-[39px] text-2xl text-[#333333] font-semibold ">+971 432 342</div>
+                  <div className="md:w-[171px] md:h-[19px] text-[#717171]">Last seen at 04:43 PM</div>
+                </div>
               </div>
-              <div className="flex flex-col justify-center items-center text-center w-full h-[62px] ">
-                <div className="md:w-[220px]  md:h-[39px] text-2xl text-[#333333] font-semibold ">+971 432 342</div>
-                <div className="md:w-[171px] md:h-[19px] text-[#717171]">Last seen at 04:43 PM</div>
-              </div>
-            </div>
             </div>
 
           </div>
 
 
           {/* Details , Mobile and other details */}
-          <div className="flex flex-col bg-[#F3F3F3]  h-full overflow-y-auto scrollbar-hide border border-[#E4E4E4]">
+          <div className="flex flex-col bg-[#F3F3F3]  h-full overflow-y-auto scrollbar-hide border border-[#E4E4E4] border-t-0">
             <div className="flex flex-col md:w-[322px] md:h-[111px] space-y-5  ml-2.5">
 
               <div className="md:w-[60px] h-8  py-2.5">

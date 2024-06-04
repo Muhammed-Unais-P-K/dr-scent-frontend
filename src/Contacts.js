@@ -102,7 +102,7 @@ export const Contacts = [
     {
         id:21,
         name: "+971 765 8721",
-        message: "We have informed our team...",
+        message: "We have informed our team we have informed our team.. we have informed our team..",
     },
 
     {
